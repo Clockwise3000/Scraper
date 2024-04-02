@@ -1,0 +1,9 @@
+body {
+    background-color: #0d0d0d;
+    color: #d1d1d1;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none; /* Remove underline from links */
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="../script.js"></script>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<title>List of Files</title>
+</head>
+<body>
+
+<h1>Discord Channel Archive</h1>
+
+<ul id="fileList">
+  <!-- Replace this with the generated list of files -->
+</ul>
+
+<script>
+// Pre-generated list of files with corresponding URLs
+var files = [
+  { name: "|Bloxstrap| General", url: "bloxstrapgeneral.html" },
+  { name: "|Roblox Deploy History Updates| Announcements", url: "RobloxDeployHistoryUpdatesAnnouncements.html" }
+];
+
+// Select the unordered list element
+var fileList = document.getElementById("fileList");
+
+// Loop through the pre-generated files and create list items with links for each
+files.forEach(function(file) {
+  var listItem = document.createElement("li");
+  var link = document.createElement("a");
+  link.textContent = file.name;
+  link.href = file.url;
+  listItem.appendChild(link);
+  fileList.appendChild(listItem);
+});
+</script>
+
+</body>
+</html>
