@@ -9,24 +9,27 @@
 
 <h1>List of Files in this Directory</h1>
 
-<ul>
-  <?php
-    // Get the current directory path
-    $directory = __DIR__;
-
-    // Open a directory, and read its contents
-    if (is_dir($directory)){
-      if ($dh = opendir($directory)){
-        while (($file = readdir($dh)) !== false){
-          if ($file != "." && $file != "..") {
-            echo "<li>$file</li>";
-          }
-        }
-        closedir($dh);
-      }
-    }
-  ?>
+<ul id="fileList">
+  <!-- Replace this with the generated list of files -->
 </ul>
+
+<script>
+// Pre-generated list of files
+var files = [
+  "RobloxDeployHistoryUpdatesAnnouncements.html",
+  "bloxstrapgeneral.html"
+];
+
+// Select the unordered list element
+var fileList = document.getElementById("fileList");
+
+// Loop through the pre-generated files and create list items for each
+files.forEach(function(file) {
+  var listItem = document.createElement("li");
+  listItem.textContent = file;
+  fileList.appendChild(listItem);
+});
+</script>
 
 </body>
 </html>
