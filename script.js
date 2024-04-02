@@ -5,7 +5,7 @@ function authenticate() {
 
     if (password === "qXnu[f6T7D)>&?$jaQ.+HD1]Sj<pIo=oL,@[~zBfG|`U;c'@93(j2hTZ[aXpUU-") {
         sessionStorage.setItem("authenticated", "true");
-        window.location.href = "Scraper/3F4818AC1DC3F53F1D91A6CE1BCFE1BDDFBE28A456D7C848599A395721/mainpage.html";
+        window.location.href = "3F4818AC1DC3F53F1D91A6CE1BCFE1BDDFBE28A456D7C848599A395721/mainpage.html";
     } else {
         alert("Incorrect password. Please try again.");
     }
