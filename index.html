@@ -4,44 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>List of Files</title>
-<script>
-  // Function to fetch and display file list
-  function displayFileList() {
-    // Path to the directory
-    var directory = ".";
-    
-    // Fetch the file list from the server
-    fetch(directory)
-      .then(response => response.text())
-      .then(data => {
-        // Split the data by newline to get individual file names
-        var files = data.split('\n');
-        
-        // Select the unordered list element
-        var fileList = document.getElementById("fileList");
-        
-        // Clear any existing items
-        fileList.innerHTML = '';
-        
-        // Loop through the files and create list items for each
-        files.forEach(function(file) {
-          if (file !== "") {
-            var listItem = document.createElement("li");
-            listItem.textContent = file;
-            fileList.appendChild(listItem);
-          }
-        });
-      })
-      .catch(error => console.error('Error fetching file list:', error));
-  }
-</script>
 </head>
-<body onload="displayFileList();">
+<body>
 
 <h1>List of Files in this Directory</h1>
 
-<ul id="fileList">
-  <!-- File list will be populated dynamically here -->
+<ul>
+  <?php
+    // Get the current directory path
+    $directory = __DIR__;
+
+    // Open a directory, and read its contents
+    if (is_dir($directory)){
+      if ($dh = opendir($directory)){
+        while (($file = readdir($dh)) !== false){
+          if ($file != "." && $file != "..") {
+            echo "<li>$file</li>";
+          }
+        }
+        closedir($dh);
+      }
+    }
+  ?>
 </ul>
 
 </body>
